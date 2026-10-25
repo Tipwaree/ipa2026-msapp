@@ -5,7 +5,8 @@ from netmiko import ConnectHandler
 
 
 def normalize(rows):
-    """ทำให้ key ตรงกับตัวอย่างอาจารย์ ไม่ว่า ntc-templates จะคืน intf/ipaddr หรือ interface/ip_address"""
+    """ทำให้ key ตรงกับตัวอย่างอาจารย์
+    ไม่ว่า ntc-templates จะคืน intf/ipaddr หรือ interface/ip_address"""
     return [
         {
             "interface": r.get("interface", r.get("intf")),

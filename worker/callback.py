@@ -10,7 +10,8 @@ def callback(ch, method, props, body):
     try:
         job = json_util.loads(body.decode())
     except Exception as e:
-        # message เก่าที่ไม่ใช่ JSON (เช่น 192.168.1.44 จากตอน Part 7) จะไม่ทำให้ consumer ค้าง
+        # message เก่าที่ไม่ใช่ JSON (เช่น 192.168.1.44 จากตอน Part 7)
+        # จะไม่ทำให้ consumer ค้าง
         print(f"Skipped message that is not JSON: {body!r} ({e})", flush=True)
         return
 
