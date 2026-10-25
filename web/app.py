@@ -37,7 +37,7 @@ def delete_router(id):
 def router_detail(ip):
     # แสดงผล 3 ครั้งล่าสุดของ router นี้
     records = list(
-        status.find({"router_ip": ip}).sort("timestamp", DESCENDING).limit(3)
+        status.find({"router_ip": ip}).sort("timestamp", DESCENDING).limit(5)
     )
     return render_template("router_detail.html", ip=ip, records=records)
 
