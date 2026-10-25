@@ -35,7 +35,7 @@ def delete_router(id):
 
 @app.route("/router/<ip>", methods=["GET"])
 def router_detail(ip):
-    # แสดงผล 3 ครั้งล่าสุดของ router นี้
+    # แสดงผล 5 ครั้งล่าสุดของ router นี้
     records = list(
         status.find({"router_ip": ip}).sort("timestamp", DESCENDING).limit(5)
     )
